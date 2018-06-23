@@ -98,20 +98,33 @@ Eukaryotes contain the extra complication of splicing, where your read will be s
 
 ![Hisat](hisat2.jpg)
 
-**NOTE**: The result of running Hisat2 should have been a SAM/BAM file 'HISAT2 on data 6 and data 1'. The [Sequence Alignment/Map (SAM) format](https://samtools.github.io/hts-specs/SAMv1.pdf) is a tabular text file format, where each line contains information for one alignment. To make it faster, all fastq files are already aligned. 
+**NOTE**: The result of running Hisat2 should have been a SAM/BAM file 'HISAT2 on data 6 and data 1'. The [Sequence Alignment/Map (SAM) format](https://samtools.github.io/hts-specs/SAMv1.pdf) is a tabular text file format, where each line contains information for one alignment. To make it faster, all fastq files are already aligned.  Otherwise you can run Hisat2 for the other files.
 
 
 #### Generate table of counts of genes
 
-Now that we know where the reads align in the genome, we can count how many reads each gene has (which represents how much it is expressed). For this, we need to intersect the alignment information in the SAM/BAM file (containing the positions where each read aligns in the genome) with the positions of the genes in the genome. These positions are often represented in gtf/gff files. The file 'Drosophila_melanogaster.BDGP6.85.sample.gtf' in your Galaxy history contains the positions of the genes we are considering for this analysis. You can inspect that file in your Galaxy history to see it's contents.
+Now that we know where the reads align in the genome, we can count how many reads each gene has (which represents how much it is expressed). For this, we need to intersect the alignment information in the SAM/BAM file (containing the positions where each read aligns in the genome) with the positions of the genes in the genome. These positions are often stored as [gtf/gff files](https://en.wikipedia.org/wiki/General_feature_format). The file 'Drosophila_melanogaster.BDGP6.85.sample.gtf' in your Galaxy history contains the positions of the genes we are considering for this analysis. You can inspect that file in your Galaxy history to see its contents.
 
 **TASK**: Use htseq-counts in Galaxy to count how many reads fall in each gene for the sample mut_lib1_R1. Look for the HtSeq-counts Galaxy tool in the tool search field on the top left, then click on the HtSeq tool in the tool menu to get the tool interface. Finally, you need to select the appropriate parameters to run the tool: Set the aligned SAM/BAM as input data as 'HISAT2 on data 6 and data 1'; Then select 'Drosophila_melanogaster.BDGP6.85.sample.gtf' as the gff file. Finally, press 'Execute'.
 
 ![HTSeq](htseq.jpg)
 
+**NOTE**: Htseq-counts return two files. One contains the number of reads per gene (which is what we're interested in). The other file (No Features) contain information about reads that could not be assigned to genes (for multiple different reasons). To make it faster, count files for all samples were already generated. Otherwise you can run htseq counts for the other files.
+
+**Question**: How many reads are associated to gene FBgn0036465 in the sample mut_lib1_R1? If you use the pregenerated count files, it is the 'htseq-count on data 5 and data 7'.
+<details><summary>Click Here to see the answer</summary><p>
+219
+</p></details>
+
+**Question**: How many reads are associated to gene FBgn0036465 in each of the samples? You can use the count files that are already generated (7 and 8 are from mutant samples, 9 and 10 are from WT samples).
+<details><summary>Click Here to see the answer</summary><p>
+219 and 263 in mutant samples; 0 and 1 in WT samples.
+</p></details>
+
+
 #### Perform differential analysis tests
 
-Now that we have the counts of reads associated to each gene in each sample, 
+Now that we have the counts of reads associated to each gene in each sample, we can compare the counts from the different samples to identify genes differentially expressed between groups of interest.
 
 **TASK**: Use DESeq2 in Galaxy to see which genes are differentially expressed . For this
 
