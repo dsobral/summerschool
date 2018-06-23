@@ -12,7 +12,7 @@ For this session, we're going to use [Galaxy](https://galaxyproject.org/). This 
 ![Galaxy](NGSworkflow.jpg)
 
 
-**NOTE**: We're using a Galaxy instance specific for this session that is hosted in the [Portuguese Research Cloud (INCD)](http://www.incd.pt/). There are Galaxy instances publicly available such as [https://usegalaxy.eu/](https://usegalaxy.eu/). 
+**NOTE**: We're using a Galaxy instance specific for this session that is hosted in the [Portuguese Research Cloud (INCD)](http://www.incd.pt/) that will not be available after the course. Instances can be created according to research needs. There are also generic Galaxy instances publicly available such as [https://usegalaxy.eu/](https://usegalaxy.eu/). 
 
 
 ### Introduction
