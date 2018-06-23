@@ -85,7 +85,7 @@ The basic steps for RNA-Seq analysis:
 **NOTE**: Before aligning the reads to the genome, we need to make sure the data we have is of good quality. This data is already of good quality, ready to align, but it is usually a good idea to check before starting the analysis. [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) is a popular program to generate quality reports on fastq data. Running FastQC on your raw data is usually the first thing you should do once you receive a new dataset. FastQC is free and works on Windows, Mac and Linux. To see an example of a FastQC report, inspect the contents of "FastQC on data 1: Webpage" that you have in your history. 
 
 
-### Alignment of reads to the Drosophila genome
+#### Alignment of reads to the Drosophila genome
 
 Genome data is tipically stored as a fasta file, containining one or more nucleotide sequences (the organism's chromosomes). In our case, we have the Drosophila genome, which you can see in your Galaxy history in the  'Drosophila_melanogaster.BDGP6.dna.toplevel.fa' fasta file. You can inspect it to see its content.
 
@@ -98,5 +98,8 @@ Eukaryotes contain the extra complication of splicing, where your read will be s
 
 ![Hisat](hisat2.jpg)
 
-**TASK**:
+**NOTE**: The result of running Hisat2 should have been a SAM/BAM file 'HISAT2 on data 6 and data 1'. The [Sequence Alignment/Map (SAM) format](https://samtools.github.io/hts-specs/SAMv1.pdf) is a tabular text file format, where each line contains information for one alignment. To make it faster, all fastq files are already aligned. 
+
+
+
 
