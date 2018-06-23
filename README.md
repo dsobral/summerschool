@@ -96,7 +96,7 @@ Eukaryotes contain the extra complication of splicing, where your read will be s
 
 **TASK**: Use Hisat2 in Galaxy to align the reads in mut_lib1_R1.fq to the Drosophila genome. For this, you need to look for the Hisat2 Galaxy tool in the tool search field on the top left, then click on the Hisat tool in the tool menu to get the tool interface. Finally, you need to select the appropriate parameters to run the tool: set the input data as 'individual unpaired reads', and select mut_lib1_R1.fq; Then select 'Use a genome from history' in the source for the reference genome to align against. Choose 'Drosophila_melanogaster.BDGP6.dna.toplevel.fa as your reference genome.
 
-![NGS Workflow](NGSworkflow.jpg)
+![Hisat](hisat2.jpg)
 
 **TASK**:
 
