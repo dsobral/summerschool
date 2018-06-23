@@ -71,15 +71,21 @@ The sequence of the first read is in the 2nd line:  "TTGCTGCTCTGGTTGTCGACAACGGCT
 
 In RNA-Seq experiments, we're sequencing the transcripts that are expressed in chosen tissues/cells. The most commonly used illumina sequencing machines cannot directly read RNA (only DNA), therefore after purification, RNA needs to be converted to cDNA, after which it can be read like genomic DNA.
 
-For this practical session, we're going to use data from [Guilgur et al, 2014](https://elifesciences.org/content/3/e02181). In this Drosophila melanogaster dataset, we have two conditions (WT and fandango mutant), with two replicates for each. To make it quick to run, we have extracted data for a very limited set of genes. You should be able to see 4 fastq files in your history (two WT replicates: WT_lib2_R1.fq, WT_lib1_R1.fq and two mutant replicates: mut_lib1_R1.fq, mut_lib2_R1.fq). The goal of this study is to indentify genes that are differentially expressed between the WT and the mutant condition.
+For this practical session, we're going to use data from [Guilgur et al, 2014](https://elifesciences.org/content/3/e02181). In this Drosophila melanogaster dataset, we have two conditions (WT and fandango mutant), with two replicates for each. To make it quick to run, we have extracted data for a very limited set of genes. You should be able to see 4 fastq files in your Galaxy history (two WT replicates: WT_lib2_R1.fq, WT_lib1_R1.fq and two mutant replicates: mut_lib1_R1.fq, mut_lib2_R1.fq). The goal of this study is to indentify genes that are differentially expressed between the WT and the mutant condition.
 
-The basic steps for this analysis:
+The basic steps for RNA-Seq analysis:
 
-  * Alignment of reads to the Drosophila genome
+  * Alignment of reads to the Drosophila genome (to identify where the reads come from)
 
-  * Generate table of counts of genes
+  * Generate table of counts of genes (how much is each gene expressed in each sample)
 
-  * Differential Analysis tests
+  * Perform differential analysis tests (compare the expression of genes between conditions)
+  
+  
+**NOTE**: Before aligning the reads to the genome, we need to make sure the data we have is of good quality. This data is already of good quality, ready to align, but it is usually a good idea to check before starting the analysis. [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) is a popular program to generate quality reports on fastq data. Running FastQC on your raw data is usually the first thing you should do once you receive a new dataset. FastQC is free and works on Windows, Mac and Linux. To see an example of a FastQC report, inspect the contents of "FastQC on data 1: Webpage" that you have in your history. 
+
+
+
 
 
 
