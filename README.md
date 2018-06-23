@@ -54,3 +54,9 @@ Each base has a quality character associated with it, representing how confident
 * Q=40 - 99.99% accuracy (0.0001 error)
 
 Although there's theoretically no limit, Q usually goes up to around 40 in recent illumina machines.
+
+
+**TASK**: Inspect the contents of mut_lib1_R1.fq. 
+
+![View Data](view_data.jpg)
+
