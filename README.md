@@ -85,7 +85,18 @@ The basic steps for RNA-Seq analysis:
 **NOTE**: Before aligning the reads to the genome, we need to make sure the data we have is of good quality. This data is already of good quality, ready to align, but it is usually a good idea to check before starting the analysis. [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) is a popular program to generate quality reports on fastq data. Running FastQC on your raw data is usually the first thing you should do once you receive a new dataset. FastQC is free and works on Windows, Mac and Linux. To see an example of a FastQC report, inspect the contents of "FastQC on data 1: Webpage" that you have in your history. 
 
 
+### Alignment of reads to the Drosophila genome
+
+Genome data is tipically stored as a fasta file, containining one or more nucleotide sequences (the organism's chromosomes). In our case, we have the Drosophila genome, which you can see in your Galaxy history in the  'Drosophila_melanogaster.BDGP6.dna.toplevel.fa' fasta file. You can inspect it to see its content.
+
+To be able to align millions of short reads to a (sometimes large) reference genome, novel, more efficient, alignment methods had to be developed. The most popular are based on the [burrows-wheeler transform](https://en.wikipedia.org/wiki/Burrows%E2%80%93Wheeler_transform), of which [bwa](http://bio-bwa.sourceforge.net/) and [bowtie](http://bowtie-bio.sourceforge.net/index.shtml) are examples. They enable alignment of millions of reads in a few minutes, even in a common laptop.  
+
+Eukaryotes contain the extra complication of splicing, where your read will be spread through multiple regions of the genome (usually, different exons of the same transcript). When using small, single-end reads, this is less of a problem, since it is less likely that your reads will overlap significantly with a splice site. Nonetheless, it is a good idea to use an aligner that allows split reads. [Hisat](https://ccb.jhu.edu/software/hisat2/index.shtml) (based on bowtie) is one such splice-aware aligner (it is an update of the better known Tophat aligner). It still uses the same approach as before, but with extensions to allow splitting of reads (i.e. different parts of a read may align in different places).
 
 
+**TASK**: Use Hisat2 in Galaxy to align the reads in mut_lib1_R1.fq to the Drosophila genome. For this, you need to look for the Hisat2 Galaxy tool in the tool search field on the top left, then click on the Hisat tool in the tool menu to get the tool interface. Finally, you need to select the appropriate parameters to run the tool: set the input data as 'individual unpaired reads', and select mut_lib1_R1.fq; Then select 'Use a genome from history' in the source for the reference genome to align against. Choose 'Drosophila_melanogaster.BDGP6.dna.toplevel.fa as your reference genome.
 
+![NGS Workflow](NGSworkflow.jpg)
+
+**TASK**:
 
