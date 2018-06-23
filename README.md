@@ -124,12 +124,28 @@ Now that we know where the reads align in the genome, we can count how many read
 
 #### Perform differential analysis tests
 
-Now that we have the counts of reads associated to each gene in each sample, we can compare the counts from the different samples to identify genes differentially expressed between groups of interest.
+Now that we have the counts of reads associated to each gene in each sample, we can compare the counts from the different samples to identify genes differentially expressed between groups of interest. For this, we need to normalize the data, and perform statistical tests. There are many freely available tools to perform normalization, estimate variance and perform statistical tests for differential expression. The most commonly used, and that have been demonstrated to work well under most conditions, are the R packages [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html)) and [edger](https://bioconductor.org/packages/release/bioc/html/edgeR.html).
 
-**TASK**: Use DESeq2 in Galaxy to see which genes are differentially expressed . For this
+**TASK**: Use DESeq2 in Galaxy to see which genes are differentially expressed between the fandango mutant samples and the WT samples. For this 
 
 ![DEseq2](deseq2.jpg)
 
+**NOTE**: Deseq main results (Deseq result file) is a table containing the statistical tests comparing the two conditions for each gene. The last column of this table (column 7) contains the adjusted pvalue indicating how much should I trust that this gene is differentially expressed.
+
+**Question**: Why do you need replicates for each condition? 
+<details><summary>Click Here to see the answer</summary><p>
+To identify if a gene is differentially expressed between conditions, we need to estimate how much it varies within the same condition. We need to have biological replicates to obtain this estimate.
+</p></details>
+
+**Question**: What is the difference between pvalue and adjusted pvalue? 
+<details><summary>Click Here to see the answer</summary><p>
+Each gene is tested independently. Since I am testing many genes, I could obtain false positives just by chance. Therefore, we need to adjust the pvalue to take into account the multiple tests that we're performing.
+</p></details>
+
+**Question**: How many genes are differentially expressed between fandango mutant and the WT? A gene is considered to be differentially expressed when the adjusted pvalue in the result table is less than 0.05. 
+<details><summary>Click Here to see the answer</summary><p>
+FBgn0036465 is the only gene with adjusted pvalue < 0.05.
+</p></details>
 
 To have a dataset with a more realistic size, we will also use data from Trapnell and colleagues [(Trapnell et. al, 2012)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3334321/), where the authors created an artificial Drosophila melanogaster dataset with 2 conditions and 3 replicates each, where 300 genes were perturbed in-silico.
 
