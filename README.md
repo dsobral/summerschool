@@ -110,12 +110,12 @@ Now that we know where the reads align in the genome, we can count how many read
 ![HTSeq](htseq.jpg)
 
 **NOTE**: Htseq-counts return two files. One contains the number of reads per gene (which is what we're interested in). The other file (No Features) contain information about reads that could not be assigned to genes (for multiple different reasons). To make it faster, count files for all samples were already generated. Otherwise you can run htseq counts for the other files.
-
+<br/>
 **Question**: How many reads are associated to gene FBgn0036465 in the sample mut_lib1_R1? If you use the pregenerated count files, it is the 'htseq-count on data 5 and data 7'.
 <details><summary>Click Here to see the answer</summary><p>
 219
 </p></details>
-
+<br/>
 **Question**: How many reads are associated to gene FBgn0036465 in each of the samples? You can use the count files that are already generated (7 and 8 are from mutant samples, 9 and 10 are from WT samples).
 <details><summary>Click Here to see the answer</summary><p>
 219 and 263 in mutant samples; 0 and 1 in WT samples.
