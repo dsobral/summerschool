@@ -100,14 +100,14 @@ Eukaryotes contain the extra complication of splicing, where your read will be s
 
 **NOTE**: The result of running Hisat2 should have been a SAM/BAM file 'HISAT2 on data 6 and data 1'. The [Sequence Alignment/Map (SAM) format](https://samtools.github.io/hts-specs/SAMv1.pdf) is a tabular text file format, where each line contains information for one alignment. To make it faster, all fastq files are already aligned. 
 
-**TASK**: Use htseq-counts in Galaxy to count how many reads fall in each gene for the sample mut_lib1_R1. For this, you need to look for the Hisat2 Galaxy tool in the tool search field on the top left, then click on the Hisat tool in the tool menu to get the tool interface. Finally, you need to select the appropriate parameters to run the tool: set the input data as 'individual unpaired reads', and select mut_lib1_R1.fq; Then select 'Use a genome from history' in the source for the reference genome to align against. Choose 'Drosophila_melanogaster.BDGP6.dna.toplevel.fa as your reference genome.
-
 
 #### Generate table of counts of genes
 
 Now that we know where the reads align in the genome, we can count how many reads each gene contain. For this, we need to intersect the alignment information in the SAM/BAM file (containing the positions where each read aligns in the genome) with the positions of the genes in the genome. 
 
+**TASK**: Use htseq-counts in Galaxy to count how many reads fall in each gene for the sample mut_lib1_R1. For this, you need to look for the Hisat2 Galaxy tool in the tool search field on the top left, then click on the Hisat tool in the tool menu to get the tool interface. Finally, you need to select the appropriate parameters to run the tool: set the input data as 'individual unpaired reads', and select mut_lib1_R1.fq; Then select 'Use a genome from history' in the source for the reference genome to align against. Choose 'Drosophila_melanogaster.BDGP6.dna.toplevel.fa as your reference genome.
 
+![HTSeq](htseq.jpg)
 
 #### Perform differential analysis tests
 
@@ -115,7 +115,7 @@ Now that we have the counts of reads associated to each gene in each sample,
 
 **TASK**: Use DESeq2 in Galaxy to see which genes are differentially expressed . For this
 
-
+![DEseq2](deseq2.jpg)
 
 
 To have a dataset with a more realistic size, we will also use data from Trapnell and colleagues [(Trapnell et. al, 2012)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3334321/), where the authors created an artificial Drosophila melanogaster dataset with 2 conditions and 3 replicates each, where 300 genes were perturbed in-silico.
