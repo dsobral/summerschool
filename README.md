@@ -138,16 +138,19 @@ Now that we have the counts of reads associated to each gene in each sample, we 
 <details><summary>Click Here to see the answer</summary><p>
 To identify if a gene is differentially expressed between conditions, we need to estimate how much it varies within the same condition. We need to have biological replicates to obtain this estimate.
 </p></details>
+<br/>
 
 **Question**: What is the difference between pvalue and adjusted pvalue? 
 <details><summary>Click Here to see the answer</summary><p>
 Each gene is tested independently. Since I am testing many genes, I could obtain false positives just by chance. Therefore, we need to adjust the pvalue to take into account the multiple tests that we're performing.
 </p></details>
+<br/>
 
 **Question**: How many genes are differentially expressed between fandango mutant and the WT? A gene is considered to be differentially expressed when the adjusted pvalue in the result table is less than 0.05. 
 <details><summary>Click Here to see the answer</summary><p>
 FBgn0036465 is the only gene with adjusted pvalue < 0.05.
 </p></details>
+<br/>
 
 To have a dataset with a more realistic size, we will also use data from Trapnell and colleagues [(Trapnell et. al, 2012)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3334321/), where the authors created an artificial Drosophila melanogaster dataset with 2 conditions and 3 replicates each, where 300 genes were perturbed in-silico.
 
