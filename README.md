@@ -128,7 +128,7 @@ Now that we know where the reads align in the genome, we can count how many read
 
 Now that we have the counts of reads associated to each gene in each sample, we can compare the counts from the different samples to identify genes differentially expressed between groups of interest. For this, we need to normalize the data, and perform statistical tests. There are many freely available tools to perform normalization, estimate variance and perform statistical tests for differential expression. The most commonly used, and that have been demonstrated to work well under most conditions, are the R packages [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html)) and [edger](https://bioconductor.org/packages/release/bioc/html/edgeR.html).
 
-**TASK**: Use DESeq2 in Galaxy to see which genes are differentially expressed between the fandango mutant samples and the WT samples. For this 
+**TASK**: Use DESeq2 in Galaxy to see which genes are differentially expressed between the fandango mutant samples and the WT samples. For this, we need to define the groups that we want to compare (in this case, we want to compare Wild Type and fandango mutant genotypes) and associate the appropriate count tables to each group. Therefore, we have one variable (Genotype), with two values (WT and mut) which we want to compare.
 
 ![DEseq2](deseq2.jpg)
 
