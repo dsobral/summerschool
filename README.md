@@ -105,20 +105,20 @@ Eukaryotes contain the extra complication of splicing, where your read will be s
 
 Now that we know where the reads align in the genome, we can count how many reads each gene has (which represents how much it is expressed). For this, we need to intersect the alignment information in the SAM/BAM file (containing the positions where each read aligns in the genome) with the positions of the genes in the genome. These positions are often stored as [gtf/gff files](https://en.wikipedia.org/wiki/General_feature_format). The file 'Drosophila_melanogaster.BDGP6.85.sample.gtf' in your Galaxy history contains the positions of the genes we are considering for this analysis. You can inspect that file in your Galaxy history to see its contents.
 
-**TASK**: Use htseq-counts in Galaxy to count how many reads fall in each gene for the sample mut_lib1_R1. Look for the HtSeq-counts Galaxy tool in the tool search field on the top left, then click on the HtSeq tool in the tool menu to get the tool interface. Finally, you need to select the appropriate parameters to run the tool: Set the aligned SAM/BAM as input data as 'HISAT2 on data 6 and data 1'; Then select 'Drosophila_melanogaster.BDGP6.85.sample.gtf' as the gff file. Finally, press 'Execute'.
+**TASK**: Use htseq-counts in Galaxy to count how many reads fall in each gene for the sample mut_lib1_R1. Look for the HtSeq-counts Galaxy tool in the tool search field on the top left, then click on the HtSeq tool in the tool menu to get the tool interface. Finally, you need to select the appropriate parameters to run the tool: Set the aligned SAM/BAM as input data as 'HISAT2 on data xx and data yy' (specific numbers will vary, take note of the numbers for your file - you can also use a file that was already pre-generated called 'HISAT2 on mut_lib1'); Then select 'Drosophila_melanogaster.BDGP6.85.sample.gtf' as the gff file. Finally, press 'Execute'.
 
 ![HTSeq](htseq.jpg)
 
 **NOTE**: Htseq-counts return two files. One contains the number of reads per gene (which is what we're interested in). The other file (No Features) contain information about reads that could not be assigned to genes (for multiple different reasons). To make it faster, count files for all samples were already generated. Otherwise you can run htseq counts for the other files.
 <br/>
 
-**Question**: How many reads are associated to gene FBgn0036465 in the sample mut_lib1_R1? If you use the pregenerated count files, it is the 'htseq-count on data 5 and data 7'.
+**Question**: How many reads are associated to gene FBgn0036465 in the sample mut_lib1_R1? If you use the pregenerated count files, it is the file 'htseq-count on mut_lib1'.
 <details><summary>Click Here to see the answer</summary><p>
 219
 </p></details>
 <br/>
 
-**Question**: How many reads are associated to gene FBgn0036465 in each of the samples? You can use the count files that are already generated (7 and 8 are from mutant samples, 9 and 10 are from WT samples).
+**Question**: How many reads are associated to gene FBgn0036465 in each of the samples? You can generate them yourself, or use the count files that were already pre-generated.
 <details><summary>Click Here to see the answer</summary><p>
 219 and 263 in mutant samples; 0 and 1 in WT samples.
 </p></details>
