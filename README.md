@@ -57,13 +57,13 @@ Each base has a quality character associated with it, representing how confident
 Although there's theoretically no limit, Q usually goes up to around 40 in recent illumina machines.
 
 
-**TASK**: Inspect the contents of mut_lib1_R1.fq. 
+**TASK**: Inspect the contents of mut_lib1_R1.fq (note: the number of the file in the history may vary). 
 
 ![View Data](view_data.jpg)
 
 **Question**: What is the sequence of the first read in mut_lib1_R1.fq? And where is the information regarding the qualities of the bases?
 <details><summary>Click Here to see the answer</summary><p>
-The sequence of the first read is in the 2nd line:  "TTGCTGCTCTGGTTGTCGACAACGGCTCTGGCATGTGCAAGGCCGGATTTGCCGGAGACGATGCTCCCCGCGCCGTCTTCCCATCGATTGTGGGACGTC". The information on its base qualities is in the 4th line: "CCCFFFFFHHGHHIJIIJIIJJJGIHEHJJJHIIJGJJJJIJIJIJEHIHHHHHFCDBBDDDDDDDDDDDBB@BDBDDBDCDDDDB?BDBDDBBBBDDB".
+The sequence of the first read is in the 2d line:  "TTGCTGCTCTGGTTGTCGACAACGGCTCTGGCATGTGCAAGGCCGGATTTGCCGGAGACGATGCTCCCCGCGCCGTCTTCCCATCGATTGTGGGACGTC". The information on its base qualities is in the 4th line: "CCCFFFFFHHGHHIJIIJIIJJJGIHEHJJJHIIJGJJJJIJIJIJEHIHHHHHFCDBBDDDDDDDDDDDBB@BDBDDBDCDDDDB?BDBDDBBBBDDB".
 </p></details>
 
 
