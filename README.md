@@ -1,5 +1,5 @@
 
-# Summer School 2018
+# Summer School
 
 ## High Throughput Sequencing (HTS) Data Analysis
 
