@@ -63,7 +63,7 @@ Although there's theoretically no limit, Q usually goes up to around 40 in recen
 
 **Question**: What is the sequence of the first read in mut_lib1_R1.fq? And where is the information regarding the qualities of the bases?
 <details><summary>Click Here to see the answer</summary><p>
-The sequence of the first read is in the 2d line:  "TTGCTGCTCTGGTTGTCGACAACGGCTCTGGCATGTGCAAGGCCGGATTTGCCGGAGACGATGCTCCCCGCGCCGTCTTCCCATCGATTGTGGGACGTC". The information on its base qualities is in the 4th line: "CCCFFFFFHHGHHIJIIJIIJJJGIHEHJJJHIIJGJJJJIJIJIJEHIHHHHHFCDBBDDDDDDDDDDDBB@BDBDDBDCDDDDB?BDBDDBBBBDDB".
+The sequence of the first read is in the 2d line:  "GAATAAAACCATGTGGACTCAAACGAACTGAACTGTATTGGAAGCTCCACGCTGGCACATGTCTAGCCTGTGCTGATAAAAAAAAAAAAAAAAAAAACGA". The information on its base qualities is in the 4th line: "bbbeeeeeggfffhiiiihiiiiiiiiiiiiiiiiifhiiiiiiiiigghhiiiihiiiiihiiggggggeeeeeaddddddccccccccc[O[acBBBB".
 </p></details>
 
 
